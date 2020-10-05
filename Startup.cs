@@ -6,6 +6,10 @@ using Microsoft.AspNetCore.SpaServices.ReactDevelopmentServer;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using mvcRakuten.Models;
+using Microsoft.EntityFrameworkCore.Design;
+using Microsoft.EntityFrameworkCore;
+
 
 namespace mvcRakuten
 {
@@ -28,6 +32,9 @@ namespace mvcRakuten
             {
                 configuration.RootPath = "ClientApp/build";
             });
+
+            services.AddDbContext<MySQLDbContext>(
+                options => options.UseMySql(Configuration.GetConnectionString("MySQL")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
