@@ -135,6 +135,11 @@ namespace mvcRakuten.Migrations
                         .HasColumnName("enabled")
                         .HasColumnType("tinyint(1)");
 
+                    b.Property<string>("imageurl")
+                        .IsRequired()
+                        .HasColumnName("imageurl")
+                        .HasColumnType("longtext CHARACTER SET utf8mb4");
+
                     b.Property<string>("location")
                         .IsRequired()
                         .HasColumnName("location")

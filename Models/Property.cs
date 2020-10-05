@@ -38,6 +38,10 @@ namespace mvcRakuten.Models
         [Required]
         public string location {get; set;}
 
+        [Column("imageurl")]
+        [Required]
+        public string imageurl {get; set;}
+
         public Property():base()
         {
 
